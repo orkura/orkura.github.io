@@ -1,0 +1,4 @@
+{{- if site.Params.enablePetalRain }}
+{{- $petalRain := resources.Get "js/petal-rain.js" | minify | fingerprint }}
+<script defer src="{{ $petalRain.RelPermalink }}" integrity="{{ $petalRain.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
