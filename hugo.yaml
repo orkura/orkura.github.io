@@ -31,6 +31,7 @@ params:
   defaultTheme: auto
   disableThemeToggle: false
   disableSpecial1stPost: true
+  hideFooter: true
 
   showReadingTime: true
   showWordCount: true
@@ -43,12 +44,10 @@ params:
   enablePetalRain: true
 
   homeInfoParams:
-    title: Orkura
-    content: "记录技术探索、开发实践与问题解决过程。"
-
-  socialIcons:
-    - name: github
-      url: https://github.com/orkura
+    title: 《劝学》
+    content: |
+      吾尝终日而思矣，不如须臾之所学也；  
+      吾尝跂而望矣，不如登高之博见也。
 
 markup:
   highlight:
