@@ -1,0 +1,356 @@
+body:has(.about-page) .main {
+    max-width: 1040px;
+}
+
+.about-page {
+    --about-accent: #e98bb0;
+    --about-accent-soft: rgba(233, 139, 176, 0.12);
+    padding: 8px 0 48px;
+}
+
+.about-overview {
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 72px);
+    align-items: start;
+}
+
+.about-profile-card {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+    text-align: center;
+}
+
+.about-avatar {
+    display: block;
+    width: min(210px, 100%);
+    aspect-ratio: 3 / 4;
+    margin: 0 auto 24px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14);
+}
+
+.about-identity h1 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.75rem;
+}
+
+.about-role,
+.about-organization,
+.about-location {
+    margin: 6px 0 0;
+}
+
+.about-role {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.about-organization,
+.about-location {
+    color: var(--secondary);
+    font-size: 0.92rem;
+}
+
+.about-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.about-links a {
+    display: inline-grid;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    place-items: center;
+    color: var(--primary);
+    font-size: 0.88rem;
+    text-decoration: none;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.about-links svg {
+    width: 18px;
+    height: 18px;
+}
+
+.about-links a:hover {
+    color: var(--about-accent);
+    border-color: var(--about-accent);
+}
+
+.about-introduction {
+    padding-top: 10px;
+}
+
+.about-introduction > h2,
+.about-section-heading h2 {
+    margin: 0;
+    color: var(--primary);
+    font-size: clamp(1.7rem, 4vw, 2.35rem);
+}
+
+.about-introduction > h2::after,
+.about-section-heading h2::after {
+    display: block;
+    width: 32px;
+    height: 3px;
+    margin-top: 10px;
+    content: "";
+    background: var(--about-accent);
+    border-radius: 999px;
+}
+
+.about-bio {
+    margin: 20px 0 0;
+    color: var(--secondary);
+    font-size: 1.02rem;
+    line-height: 1.9;
+}
+
+.about-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 38px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.about-summary-block h3,
+.about-skill-card h3,
+.about-project-card h3 {
+    margin: 0 0 16px;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.about-interest-list,
+.about-skill-card ul,
+.about-focus ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-interest-list li {
+    position: relative;
+    margin: 11px 0;
+    padding-left: 18px;
+    color: var(--secondary);
+    line-height: 1.55;
+}
+
+.about-interest-list li::before {
+    position: absolute;
+    top: 0.62em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    content: "";
+    background: var(--about-accent);
+    border-radius: 50%;
+}
+
+.about-education-list {
+    display: grid;
+    gap: 18px;
+}
+
+.about-education-item {
+    padding-left: 16px;
+    border-left: 2px solid var(--about-accent);
+}
+
+.about-education-item strong,
+.about-education-item span,
+.about-education-item small {
+    display: block;
+}
+
+.about-education-item strong {
+    color: var(--primary);
+    font-size: 0.94rem;
+}
+
+.about-education-item span,
+.about-education-item small {
+    margin-top: 4px;
+    color: var(--secondary);
+}
+
+.about-education-item small {
+    font-size: 0.78rem;
+}
+
+.about-section {
+    margin-top: 72px;
+}
+
+.about-section-heading {
+    margin-bottom: 24px;
+}
+
+.about-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.about-project-list {
+    display: grid;
+    gap: 16px;
+}
+
+.about-skill-card,
+.about-project-card {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.about-skill-card {
+    padding: 22px;
+}
+
+.about-skill-card li {
+    display: inline-block;
+    margin: 0 6px 8px 0;
+    padding: 5px 10px;
+    color: var(--secondary);
+    font-size: 0.82rem;
+    background: var(--about-accent-soft);
+    border-radius: 999px;
+}
+
+.about-project-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 26px;
+}
+
+.about-project-card h3 {
+    margin-bottom: 8px;
+}
+
+.about-project-card p {
+    margin: 0;
+    color: var(--secondary);
+    line-height: 1.7;
+}
+
+.about-project-card > a {
+    flex: 0 0 auto;
+    padding: 9px 16px;
+    color: var(--theme);
+    font-size: 0.88rem;
+    text-decoration: none;
+    background: var(--primary);
+    border-radius: 999px;
+}
+
+.about-focus .about-section-heading {
+    margin-bottom: 20px;
+}
+
+.about-focus ol {
+    display: grid;
+    gap: 12px;
+    counter-reset: focus;
+}
+
+.about-focus li {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    color: var(--secondary);
+    counter-increment: focus;
+}
+
+.about-focus li::before {
+    color: var(--about-accent);
+    font-weight: 600;
+    content: counter(focus, decimal-leading-zero);
+}
+
+@media screen and (max-width: 820px) {
+    .about-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .about-profile-card {
+        position: static;
+        display: grid;
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 24px;
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-avatar {
+        width: 150px;
+        margin: 0;
+        border-radius: 18px;
+    }
+
+    .about-links {
+        grid-column: 2;
+        justify-content: flex-start;
+        margin-top: -38px;
+    }
+
+    .about-skill-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .about-page {
+        padding-top: 0;
+    }
+
+    .about-profile-card {
+        display: block;
+        text-align: center;
+    }
+
+    .about-avatar {
+        width: 168px;
+        margin: 0 auto 22px;
+    }
+
+    .about-links {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .about-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        margin-top: 52px;
+    }
+
+    .about-project-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-links a {
+        transition: none;
+    }
+}
