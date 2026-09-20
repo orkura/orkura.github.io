@@ -1,3 +1,61 @@
-baseURL: https://example.org/
-locale: en-us
-title: My New Hugo Project
+baseURL: https://orkura.github.io/
+languageCode: zh-cn
+defaultContentLanguage: zh-cn
+timeZone: Asia/Shanghai
+title: Orkura
+theme: PaperMod
+
+hasCJKLanguage: true
+enableRobotsTXT: true
+
+pagination:
+  pagerSize: 10
+
+taxonomies:
+  category: categories
+  tag: tags
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  title: Orkura
+  description: "记录软件开发、嵌入式系统与工程实践"
+  author: Orkura
+  dateFormat: "2006-01-02"
+
+  defaultTheme: auto
+  disableThemeToggle: false
+  disableSpecial1stPost: true
+  hideFooter: true
+
+  showReadingTime: true
+  showWordCount: true
+  showToc: true
+  tocOpen: true
+  showCodeCopyButtons: true
+  showPostNavLinks: true
+  showBreadCrumbs: true
+  showRssButtonInSectionTermList: true
+  enablePetalRain: true
+
+  homeInfoParams:
+    title: 《劝学》
+    content: |
+      吾尝终日而思矣，不如须臾之所学也；  
+      吾尝跂而望矣，不如登高之博见也。
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    noClasses: false
+
+caches:
+  images:
+    dir: :cacheDir/images
