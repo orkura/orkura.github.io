@@ -24,7 +24,7 @@ outputs:
 params:
   env: production
   title: Orkura
-  description: "记录软件开发、嵌入式系统与工程实践"
+  description: "分享知识，交流经验"
   author: Orkura
   dateFormat: "2006-01-02"
 
