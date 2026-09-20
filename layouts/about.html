@@ -1,0 +1,110 @@
+{{- define "main" }}
+{{- $profile := .Params.profile }}
+
+<article class="about-page">
+  <section class="about-overview">
+    <aside class="about-profile-card">
+      <img class="about-avatar" src="{{ $profile.photo | relURL }}" alt="{{ $profile.name }}的个人照片"
+        width="210" height="280" loading="eager" decoding="async">
+
+      <div class="about-identity">
+        <h1>{{ $profile.name }}</h1>
+        <p class="about-role">{{ $profile.role }}</p>
+        <p class="about-organization">{{ $profile.organization }}</p>
+        <p class="about-location">{{ $profile.location }}</p>
+      </div>
+
+      {{- with $profile.links }}
+      <nav class="about-links" aria-label="个人链接">
+        {{- range . }}
+        {{- $iconName := cond (hasPrefix .url "mailto:") "email" (lower .label) }}
+        <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .label }}" title="{{ .label }}">
+          {{ partial "svg.html" (dict "name" $iconName) }}
+        </a>
+        {{- end }}
+      </nav>
+      {{- end }}
+    </aside>
+
+    <div class="about-introduction">
+      <h2>个人简介</h2>
+      <p class="about-bio">{{ $profile.bio }}</p>
+
+      <div class="about-summary-grid">
+        <section class="about-summary-block">
+          <h3>研究方向</h3>
+          <ul class="about-interest-list">
+            {{- range .Params.research_interests }}
+            <li>{{ . }}</li>
+            {{- end }}
+          </ul>
+        </section>
+
+        <section class="about-summary-block">
+          <h3>教育经历</h3>
+          <div class="about-education-list">
+            {{- range .Params.education }}
+            <div class="about-education-item">
+              <strong>{{ .school }}</strong>
+              <span>{{ .degree }}</span>
+              <small>{{ .period }}</small>
+            </div>
+            {{- end }}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" aria-labelledby="about-skills-title">
+    <div class="about-section-heading">
+      <h2 id="about-skills-title">技术领域</h2>
+    </div>
+    <div class="about-skill-grid">
+      {{- range .Params.skills }}
+      <section class="about-skill-card">
+        <h3>{{ .title }}</h3>
+        <ul>
+          {{- range .items }}
+          <li>{{ . }}</li>
+          {{- end }}
+        </ul>
+      </section>
+      {{- end }}
+    </div>
+  </section>
+
+  <section class="about-section" aria-labelledby="about-projects-title">
+    <div class="about-section-heading">
+      <h2 id="about-projects-title">代表项目</h2>
+    </div>
+    <div class="about-project-list">
+      {{- range .Params.featured_projects }}
+      {{- $project := . }}
+      <article class="about-project-card">
+        <div>
+          <h3>{{ $project.title }}</h3>
+          <p>{{ $project.description }}</p>
+        </div>
+        {{- with $project.url }}
+        <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">
+          {{ $project.link_text | default "查看项目" }}
+        </a>
+        {{- end }}
+      </article>
+      {{- end }}
+    </div>
+  </section>
+
+  <section class="about-section about-focus" aria-labelledby="about-focus-title">
+    <div class="about-section-heading">
+      <h2 id="about-focus-title">目前关注</h2>
+    </div>
+    <ol>
+      {{- range .Params.current_focus }}
+      <li>{{ . }}</li>
+      {{- end }}
+    </ol>
+  </section>
+</article>
+{{- end }}
