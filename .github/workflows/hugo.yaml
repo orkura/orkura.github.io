@@ -3,7 +3,7 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches:
-      - orkura/blog-design
+      - main
   workflow_dispatch:
 
 permissions:
